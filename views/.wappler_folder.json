@@ -1,0 +1,26 @@
+{
+  "index.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "cadastro.ejs": {
+    "layoutPage": "blank",
+    "description": ""
+  },
+  "dashuser.ejs": {
+    "layoutPage": "blank",
+    "description": ""
+  },
+  "forbiden.ejs": {
+    "layoutPage": "blank",
+    "description": ""
+  },
+  "login.ejs": {
+    "layoutPage": "blank",
+    "description": ""
+  },
+  "loginteste.ejs": {
+    "layoutPage": "blank",
+    "description": ""
+  }
+}

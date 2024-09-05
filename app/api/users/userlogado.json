@@ -1,0 +1,99 @@
+[
+  {
+    "name": "",
+    "module": "auth",
+    "action": "restrict",
+    "options": {
+      "provider": "security",
+      "loginUrl": "/login",
+      "forbiddenUrl": "/forbiden"
+    }
+  },
+  {
+    "name": "identity",
+    "module": "auth",
+    "action": "identify",
+    "options": {
+      "provider": "security"
+    },
+    "output": true,
+    "meta": []
+  },
+  {
+    "name": "query",
+    "module": "dbconnector",
+    "action": "single",
+    "options": {
+      "connection": "db",
+      "sql": {
+        "type": "select",
+        "columns": [
+          {
+            "table": "users",
+            "column": "nome"
+          },
+          {
+            "table": "users",
+            "column": "email"
+          }
+        ],
+        "params": [
+          {
+            "operator": "equal",
+            "type": "expression",
+            "name": ":P1",
+            "value": "{{identity}}",
+            "test": ""
+          }
+        ],
+        "table": {
+          "name": "users"
+        },
+        "primary": "id",
+        "joins": [],
+        "wheres": {
+          "condition": "AND",
+          "rules": [
+            {
+              "id": "users.id",
+              "field": "users.id",
+              "type": "double",
+              "operator": "equal",
+              "value": "{{identity}}",
+              "data": {
+                "table": "users",
+                "column": "id",
+                "type": "number",
+                "columnObj": {
+                  "type": "increments",
+                  "default": "",
+                  "primary": true,
+                  "unique": true,
+                  "nullable": false,
+                  "name": "id"
+                }
+              },
+              "operation": "=",
+              "table": "users"
+            }
+          ],
+          "conditional": null,
+          "valid": true
+        },
+        "query": "select \"nome\", \"email\" from \"users\" where \"users\".\"id\" = ?"
+      }
+    },
+    "output": true,
+    "meta": [
+      {
+        "type": "text",
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      }
+    ],
+    "outputType": "object"
+  }
+]

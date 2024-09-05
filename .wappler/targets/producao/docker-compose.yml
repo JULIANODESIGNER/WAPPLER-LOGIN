@@ -1,0 +1,36 @@
+services:
+  web:
+    restart: 'always'
+    stdin_open: true
+    tty: true
+    logging:
+      options:
+        max-file: '5'
+        max-size: '10m'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.aula3__producao_web.entrypoints=web'
+      - 'traefik.http.routers.aula3__producao_web.rule=Host(`wappler.centralwappler.com.br`)'
+      - 'traefik.http.routers.aula3__producao_web-secure.entrypoints=websecure'
+      - 'traefik.http.routers.aula3__producao_web-secure.rule=Host(`wappler.centralwappler.com.br`)'
+      - 'traefik.http.routers.aula3__producao_web-secure.tls=true'
+      - 'traefik.http.routers.aula3__producao_web-secure.tls.certresolver=leresolver'
+      - 'traefik.http.services.aula3__producao_web.loadbalancer.server.port=3000'
+      - 'traefik.docker.network=wappler-compose_proxy'
+      - 'traefik.http.routers.aula3__producao_www_web-secure.entrypoints=websecure'
+      - 'traefik.http.routers.aula3__producao_www_web-secure.rule=Host(`www.wappler.centralwappler.com.br`)'
+      - 'traefik.http.routers.aula3__producao_www_web-secure.tls=true'
+      - 'traefik.http.routers.aula3__producao_www_web-secure.tls.certresolver=leresolver'
+      - 'traefik.http.middlewares.aula3__producao_www-redirect.redirectregex.regex=^https://www.wappler.centralwappler.com.br/(.*)'
+      - 'traefik.http.middlewares.aula3__producao_www-redirect.redirectregex.replacement=https://wappler.centralwappler.com.br/$${1}'
+      - 'traefik.http.middlewares.aula3__producao_www-redirect.redirectregex.permanent=true'
+      - 'traefik.http.routers.aula3__producao_www_web-secure.middlewares=aula3__producao_www-redirect'
+    networks:
+      proxy: ~
+    build:
+      context: '../../../'
+      dockerfile: '.wappler/targets/producao/web/Dockerfile'
+networks:
+  proxy:
+    name: 'wappler-compose_proxy'
+    external: true

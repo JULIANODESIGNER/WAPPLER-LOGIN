@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <base href="/">
+  <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+  <meta charset="UTF-8">
+  <title>Central Wappler</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/bootstrap/5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="/dmxAppConnect/dmxRouting/dmxRouting.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Offcanvas/dmxBootstrap5Offcanvas.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Alert/dmxBootstrap5Alert.js" defer></script>
+  <script src="/dmxAppConnect/dmxMasonry/dmxMasonry.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxBootstrap5TableGenerator/dmxBootstrap5TableGenerator.css" />
+  <script src="/dmxAppConnect/dmxBootstrap5Tooltips/dmxBootstrap5Tooltips.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootbox5/bootstrap-modbox.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootbox5/dmxBootbox5.js" defer></script>
+  <script src="/dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer></script>
+  <script src="/dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer></script>
+  <script src="/dmxAppConnect/dmxFormatter/dmxFormatter.js" defer></script>
+  <script src="/dmxAppConnect/dmxPouchDB/dmxPouchDB.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.find.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.indexeddb.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Theme/dmxBootstrap5Theme.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSlideshow/dmxSlideshow.css" />
+  <script src="/dmxAppConnect/dmxSlideshow/dmxSlideshow.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSlideshow/themes/default.css" />
+  <script src="/dmxAppConnect/dmxSwiper/dmxSwiper.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSwiper/swiper.min.css" />
+  <script src="/dmxAppConnect/dmxSwiper/swiper.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer></script>
+  <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxNotifications/dmxNotifications.css" />
+  <script src="/dmxAppConnect/dmxNotifications/dmxNotifications.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer></script>
+  <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer></script>
+  <script src="/dmxAppConnect/dmxVideo/dmxVideo.js" defer></script>
+  <script src="/dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/summernote-lite.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/dmxSummernote.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernoteFileUpload/summernote-upload.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxAnimateCSS/animate.min.css" />
+  <script src="/dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSummernote/summernote-bs4.min.css" />
+  <script src="/dmxAppConnect/dmxSummernote/summernote-bs4.min.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSummernote/summernote-bs5.min.css" />
+  <script src="/dmxAppConnect/dmxSummernote/summernote-bs5.min.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSummernote/summernote-lite.min.css" />
+
+  <link rel="stylesheet" href="/dmxAppConnect/dmxSummernote/summernote.min.css" />
+  <script src="/dmxAppConnect/dmxSummernote/summernote.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ar-AR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-az-AZ.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-bg-BG.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-bn-BD.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ca-ES.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-cs-CZ.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-da-DK.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-de-CH.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-de-DE.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-el-GR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-en-US.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-es-ES.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-es-EU.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-fa-IR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-fi-FI.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-fr-FR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-gl-ES.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-he-IL.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-hr-HR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-hu-HU.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-id-ID.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-it-IT.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ja-JP.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ko-KR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-lt-LT.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-lt-LV.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-mn-MN.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-nb-NO.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-nl-NL.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-pl-PL.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-pt-BR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-pt-PT.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ro-RO.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ru-RU.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-sk-SK.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-sl-SI.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-sr-RS-Latin.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-sr-RS.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-sv-SE.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-ta-IN.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-th-TH.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-tr-TR.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-uk-UA.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-uz-UZ.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-vi-VN.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-zh-CN.min.js" defer></script>
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-zh-TW.min.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/medium-editor.css" />
+  <script src="/dmxAppConnect/dmxMediumEditor/medium-editor.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
+  <script src="/dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditor/themes/flat.css" />
+  <link rel="stylesheet" href="/dmxAppConnect/dmxMediumEditorImageUpload/dmxMediumEditorImageUpload.css" />
+  <script src="/dmxAppConnect/dmxMediumEditorImageUpload/dmxMediumEditorImageUpload.js" defer></script>
+
+  <script src="/dmxAppConnect/dmxSummernote/lang/summernote-pt-BR.js" defer></script>
+
+  <script src="/dmxAppConnect/dmxPdfCreator/dmxPdfCreator.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2.9/build/pdfmake.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2.9/build/vfs_fonts.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake@2.5.2/browser.min.js" defer></script>
+</head>
+
+<body is="dmx-app" id="main">
+  <div is="dmx-bs5-theme" id="bs5theme1"></div>
+  <div is="dmx-browser" id="browser1"></div>
+  <dmx-notifications id="notifies1"></dmx-notifications>
+  <dmx-serverconnect id="logout" url="/api/users/logout" noload="true"></dmx-serverconnect>
+  <dmx-serverconnect id="userlogado" url="/api/users/logado"></dmx-serverconnect>
+  <div class="modal" id="desbloquei" is="dmx-bs5-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="/assets/images/tela-de-bloqueio3.png">
+        <div class="modal-body mb-4 ms-4 me-4">
+          <h3 class="text-center">Desbloqueie seu acesso agora mesmo!</h3>
+          <h6 class="text-center mt-4 mb-2">Tenha acesso exclusivo a conteúdos premium reservados para membros da Comunidade Central Wappler.</h6>
+          <h6 class="text-center mt-3 mb-3">Junte-se hoje mesmo a Central Wappler e aprenda o melhor app de desenvolvimento low-code!</h6>
+          <h6 class="text-center mt-3 mb-4">Basta clicar no botão abaixo e tornar-se um membro da Comunidade Central Wappler.</h6>
+          <button id="btn222" class="btn w-100 mt-2 mb-2 btn-primary" dmx-on:click="browser1.goto('https://centralwappler.com.br')">Quero fazer parte</button>
+          <button id="btn333" class="btn w-100 btn-outline-secondary mt-2 text-white" data-bs-target="#modal1" dmx-on:click="browser1.goto('/entrar')">Já sou aluno e quero fazer login</button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="login" is="dmx-bs5-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="/assets/images/tela-de-bloqueio3.png">
+        <div class="modal-body mb-4 ms-4 me-4">
+          <div class="col">
+            <form id="login1" method="post" is="dmx-serverconnect-form" action="/api/users/login" dmx-on:unauthorized="modalwarning.show()" dmx-on:error="notifies1.danger('Erro')" dmx-on:success="login.hide();notifies1.success('Você ja entrou aproveite!');userlogado.load({},true);browser1.reload()">
+              <div class="row align-items-center justify-content-around">
+                <div class="col-md-8 col-lg-7 text-start col-xl-12 col-12">
+                  <div class="row">
+                    <div class="col">
+                      <h1 class="fw-bold">Seja bem vindo!</h1>
+                      <p class="text-h3">Faça login na sua conta!</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="mt-4 col">
+                      <input type="text" id="inp_email" name="email" class="form-control" placeholder="E-mail">
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <input type="password" id="inp_password" name="password" class="form-control" placeholder="Senha">
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <button id="login1_submit" class="btn btn-light w-100" type="submit">Continuar</button>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <p class="text-md-center">ou</p>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <a href="https://centralwappler.com.br/" class="btn w-100 btn-outline-secondary">Faça parte da comunidade Central Wappler</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas offcanvas-start w-auto" id="offcanvas1" is="dmx-bs5-offcanvas" tabindex="-1" show="true" nobackdrop="true" scroll="true" backdrop="false" nokeyboard="true">
+    <div class="offcanvas-body ps-0 pe-0">
+      <div class="d-flex align-content-end h-100 flex-column justify-content-between align-items-start">
+        <div class="d-flex align-content-around flex-column">
+
+
+
+          <button id="btn4" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Perfil'"><i class="fas fa-user-circle fa-3x"></i></button>
+          <button id="btn10" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Inicio'" dmx-on:click="browser1.goto('/home',true)"><i class="fas fa-home fa-2x"></i></button>
+          <button id="btn5" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Favoritos'" dmx-on:click="run({condition:{if:`logout.data.identity!=false`,else:{steps:{run:{outputType:'text'}}},outputType:'boolean'}})"><i class="fas fa-bookmark fa-2x"></i></button>
+          <button id="btn6" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Buscar'"><i class="fas fa-search fa-2x"></i></button>
+          <button id="btn2" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Anotações'"><i class="fas fa-clipboard-list fa-2x"></i></button>
+          <button id="btn1" class="btn mt-lg-2 mb-lg-2 botaomenu shadow-none" dmx-bs-tooltip="'Comunidade'" dmx-on:click="browser1.alert('Em construção!!')"><i class="fas fa-comments fa-2x"></i></button>
+        </div>
+        <div class="d-flex align-items-end mb-5"><button id="btn3" class="btn mt-lg-2 mb-lg-2 botaomenu text-danger shadow-none visually-hidden" dmx-bs-tooltip="'Sair'" data-bs-trigger="hover"><i class="fas fa-sign-out-alt fa-2x"></i></button></div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="modal" id="modal-warning" is="dmx-bs5-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p class="text-center text-warning"><i class="fas fa-exclamation-circle fa-6x"></i></p>
+          <h4 class="text-center fw-light">Não autorizado!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-between align-items-start ms-3 ps-5">
+    <div class="d-flex flex-column justify-content-around w-100">
+      <div class="d-flex">
+
+        <header class="rounded-0 border-0 mb-3 w-100">
+
+
+          <nav class="navbar navbar-expand-lg shadow-none bg-opacity-75 navbar-expand justify-content-between ps-4 pe-5" dmx-class:headerdark="bs5theme1.theme=='dark'" dmx-class:headerlight="bs5theme1.theme=='light'">
+            <span class="navbar-text">Seja bem vindo(a) {{userlogado.data.query.nome}}</span>
+            <a class="navbar-brand" href="#"><img dmx-show="bs5theme1.theme=='dark'" src="/assets/images/LOGO-FUNDO-ESCURO.png" width="180" class="img-fluid" dmx-bs-tooltip="'Central Wappler'">
+              <img class="img-fluid" dmx-show="bs5theme1.theme=='light'" src="/assets/images/LOGO-FUNDO-claro.png" width="190" dmx-bs-tooltip="'Central Wappler'"></a>
+            <div class="navbar-nav justify-content-end">
+              <a class="nav-item nav-link" href="#" dmx-on:click="run({condition:{if:`userlogado.data.identity`,then:{steps:{'bootbox.alert':{message:'erro',title:'teste',buttons:{ok:{label:'ok',className:'btn-danger'}}}}},else:{steps:{run:{action:`login.show()`,outputType:'text'}}},outputType:'boolean'}})" dmx-hide="userlogado.data.identity">Entrar</a>
+              <div class="nav-item dropdown">
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown1">
+                  <a class="dropdown-item" href="#" dmx-on:click="bs5theme1.setTheme('light')"><i class="fas fa-sun"></i>
+                    Light</a>
+                  <a class="dropdown-item" href="#" dmx-on:click="bs5theme1.setTheme('dark')"><i class="fas fa-moon"></i> Dark</a>
+                </div>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdown1" role="button" aria-haspopup="true" aria-expanded="false">Tema</a>
+              </div>
+              <a class="nav-item nav-link" href="#" dmx-on:click="logout.load({});userlogado.reset();browser1.reload()" dmx-show="userlogado.data.identity">Sair</a>
+
+            </div>
+
+          </nav>
+        </header>
+
+      </div>
+      <div class="d-flex align-items-center flex-column justify-content-center">
+        <div is="dmx-view" id="content" class="conteudopr conteudoprincipal">
+          <%- await include(content, locals); %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

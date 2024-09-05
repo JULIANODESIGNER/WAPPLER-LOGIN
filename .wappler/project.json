@@ -1,0 +1,136 @@
+{
+  "projectName": "AULA2",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "docker",
+  "projectServerModel": "node",
+  "runtime": "capacitor",
+  "webRootFolder": "/public",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "node",
+  "projectLinksType": "site",
+  "targets": [
+    {
+      "name": "testedocker",
+      "remoteURL": "http://localhost:8100",
+      "webServerPort": 8100,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "lts",
+      "NodeOS": "alpine",
+      "NodeImageType": "slim",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "dockerTimezone": "Etc/UTC",
+      "databaseConnectionType": "none",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m"
+    },
+    {
+      "name": "producao",
+      "remoteURL": "https://wappler.centralwappler.com.br/",
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "lts",
+      "NodeOS": "alpine",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "dockerTimezone": "Etc/UTC",
+      "databaseConnectionType": "none",
+      "usage": "production",
+      "dockerType": "remote",
+      "dockerProtocol": "ssh",
+      "dockerHost": "37.27.192.193",
+      "dockerServerName": "hetzner / wappler",
+      "dockerProjectName": "aula3__producao",
+      "NodeImageType": "slim",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m"
+    }
+  ],
+  "activeTarget": "testedocker",
+  "projectType": "web",
+  "resources": {
+    "providers": {
+      "hetzner": {
+        "provider-api-key": "GOSn544j2Qr1OsXOQxDtZsnUmVb5QDMopTlEBX3hDtYKFQ51AZLKh2sTMgYwcCrh",
+        "ssh-key-id": 22759711,
+        "ssh-key-file": "~/.ssh/wapplerfinal.pub",
+        "server": {
+          "wappler": {
+            "id": 52574438,
+            "status": "running",
+            "access": true,
+            "ip_address": "37.27.192.193",
+            "location": "Helsinki DC Park 1",
+            "price": 3.29,
+            "cpu": "Arm64",
+            "cores": 2,
+            "cpu_type": "shared",
+            "memory": 4,
+            "disk": 40,
+            "ssh_keys": [
+              {
+                "ssh-key-file": "~/.ssh/wapplerfinal.pub",
+                "name": "wapplerfinal",
+                "type": "ed25519",
+                "fingerprint": "ea:1a:b3:0e:87:99:4a:e2:b7:21:ed:38:3c:71:da:3b",
+                "id": 22759711
+              }
+            ],
+            "services": {
+              "postgresql": {
+                "engine": "postgres",
+                "version": "15.3",
+                "port": "9912",
+                "databases": {
+                  "postgres": {},
+                  "db": {
+                    "users": [
+                      "admin"
+                    ]
+                  }
+                },
+                "users": {
+                  "postgres": {},
+                  "admin": {
+                    "password": "S53yU79JOCSK0M73"
+                  }
+                }
+              },
+              "traefik": {}
+            }
+          }
+        },
+        "ssh_key": {
+          "wapplerfinal": {
+            "ssh-key-file": "~/.ssh/wapplerfinal.pub",
+            "name": "wapplerfinal",
+            "type": "ed25519",
+            "fingerprint": "ea:1a:b3:0e:87:99:4a:e2:b7:21:ed:38:3c:71:da:3b",
+            "id": 22759711
+          }
+        }
+      }
+    }
+  },
+  "extensions": []
+}

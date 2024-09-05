@@ -1,0 +1,13 @@
+<!-- Wappler include head-page="layouts/blank" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="dashuser" appConnect="local" -->
+<dmx-serverconnect id="userlogado" url="/api/users/userlogado"></dmx-serverconnect>
+<meta name="ac:route" content="/dashuser">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button id="btn1" class="btn" dmx-on:click="run([{serverConnect:{name:'scsair',outputType:'object',url:'/api/users/sair',site:'AULA3'}},{run:{outputType:'text',action:`browser1.goto(\'/\')`}}])">Sair</button>
+                <h1>Dashboard user - Seja bem vindo {{userlogado.data.query.email}}</h1>
+            </div>
+        </div>
+    </div>
+</header>

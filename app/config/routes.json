@@ -1,0 +1,35 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "layout": "main"
+    },
+    {
+      "path": "/cadastro",
+      "page": "cadastro",
+      "layout": "blank"
+    },
+    {
+      "path": "/dashuser",
+      "page": "dashuser",
+      "layout": "blank",
+      "exec": "/api/users/userlogado"
+    },
+    {
+      "path": "/forbiden",
+      "page": "forbiden",
+      "layout": "blank"
+    },
+    {
+      "path": "/login",
+      "page": "login",
+      "layout": "blank"
+    },
+    {
+      "path": "/loginteste",
+      "page": "loginteste",
+      "layout": "blank"
+    }
+  ]
+}

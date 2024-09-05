@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/cadastro.ejs",
+      "linkedForm": "cadastro"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "nome",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Campo obrigatorio!"
+            }
+          }
+        },
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:email": {
+              "param": "",
+              "message": "Entre com um email valido!"
+            }
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "senha",
+        "name": "senha"
+      },
+      {
+        "type": "text",
+        "fieldName": "confirmarsenha",
+        "options": {
+          "rules": {
+            "core:equalTo": {
+              "param": "senha"
+            }
+          }
+        },
+        "name": "confirmarsenha"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_1",
+              "value": "{{$_POST.email}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "db",
+                    "table": "users",
+                    "column": "email"
+                  }
+                }
+              },
+              "fieldName": "validacao"
+            }
+          ]
+        }
+      },
+      {
+        "name": "hash",
+        "module": "crypto",
+        "action": "passwordHash",
+        "options": {
+          "password": "{{$_POST.senha}}"
+        },
+        "outputType": "text"
+      },
+      {
+        "name": "insertuser",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "users",
+                "column": "nome",
+                "type": "text",
+                "value": "{{$_POST.nome}}"
+              },
+              {
+                "table": "users",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "table": "users",
+                "column": "senha",
+                "type": "text",
+                "value": "{{hash}}"
+              }
+            ],
+            "table": "users",
+            "returning": "id",
+            "query": "insert into \"users\" (\"email\", \"nome\", \"senha\") values (?, ?, ?) returning \"id\"",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.nome}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.email}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{hash}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      }
+    ]
+  },
+  "usedModules": {
+    "argon2": "^0.30.2"
+  }
+}

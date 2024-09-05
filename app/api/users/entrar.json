@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/login.ejs",
+      "linkedForm": "login"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:email": {
+              "param": "",
+              "message": "Entre com um email valido!"
+            }
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "fieldName": "senha",
+        "name": "senha"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "identity",
+      "module": "auth",
+      "action": "login",
+      "options": {
+        "username": "{{$_POST.email}}",
+        "password": "{{$_POST.senha}}",
+        "remember": "",
+        "provider": "security"
+      },
+      "output": true,
+      "meta": []
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "security",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "l98lBc7P5XD4VlR",
+    "provider": "Database",
+    "connection": "db",
+    "passwordVerify": true,
+    "users": {
+      "table": "users",
+      "identity": "id",
+      "username": "email",
+      "password": "senha"
+    },
+    "permissions": {}
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

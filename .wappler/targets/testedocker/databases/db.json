@@ -1,0 +1,73 @@
+{
+  "type": "postgres",
+  "connection": {
+    "host": "37.27.192.193",
+    "port": 9912,
+    "user": "admin",
+    "password": "S53yU79JOCSK0M73",
+    "database": "db"
+  },
+  "direct": true,
+  "databaseResource": "hetzner / wappler / postgresql",
+  "cloudDatabaseName": "db",
+  "schema": {
+    "schemas": [
+      "public"
+    ],
+    "tables": {
+      "users": {
+        "db": {
+          "schema": "public"
+        },
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "default": "",
+              "primary": true,
+              "unique": true,
+              "nullable": false
+            }
+          },
+          "nome": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "sobrenome": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "email": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "senha": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          }
+        }
+      }
+    },
+    "views": {}
+  }
+}

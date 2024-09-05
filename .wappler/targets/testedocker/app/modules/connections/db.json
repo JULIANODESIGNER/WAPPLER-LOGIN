@@ -1,0 +1,19 @@
+{
+  "name": "db",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "postgres",
+    "connection": {
+      "host": "37.27.192.193",
+      "port": 9912,
+      "user": "admin",
+      "password": "S53yU79JOCSK0M73",
+      "database": "db"
+    },
+    "databaseResource": "hetzner / wappler / postgresql",
+    "cloudDatabaseName": "db",
+    "tz": "utc"
+  },
+  "fileName": "db.json"
+}
